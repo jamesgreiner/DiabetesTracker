@@ -15,6 +15,9 @@
 		431EB4CD2B16F982009F4203 /* DiabetesTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431EB4CC2B16F982009F4203 /* DiabetesTrackerTests.swift */; };
 		431EB4D72B16F982009F4203 /* DiabetesTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431EB4D62B16F982009F4203 /* DiabetesTrackerUITests.swift */; };
 		431EB4D92B16F982009F4203 /* DiabetesTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431EB4D82B16F982009F4203 /* DiabetesTrackerUITestsLaunchTests.swift */; };
+		431EB4E82B16FCD5009F4203 /* GlucoseReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431EB4E72B16FCD5009F4203 /* GlucoseReading.swift */; };
+		431EB4EB2B1AE050009F4203 /* GlucoseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431EB4EA2B1AE050009F4203 /* GlucoseListView.swift */; };
+		431EB4EF2B1AF926009F4203 /* AddGlucoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431EB4EE2B1AF926009F4203 /* AddGlucoseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		431EB4D22B16F982009F4203 /* DiabetesTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiabetesTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		431EB4D62B16F982009F4203 /* DiabetesTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiabetesTrackerUITests.swift; sourceTree = "<group>"; };
 		431EB4D82B16F982009F4203 /* DiabetesTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiabetesTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		431EB4E72B16FCD5009F4203 /* GlucoseReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseReading.swift; sourceTree = "<group>"; };
+		431EB4EA2B1AE050009F4203 /* GlucoseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseListView.swift; sourceTree = "<group>"; };
+		431EB4EE2B1AF926009F4203 /* AddGlucoseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGlucoseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				431EB4B92B16F980009F4203 /* DiabetesTrackerApp.swift */,
-				431EB4BB2B16F980009F4203 /* ContentView.swift */,
-				431EB4BD2B16F980009F4203 /* Item.swift */,
+				431EB4E52B16FC25009F4203 /* Models */,
+				431EB4E62B16FC41009F4203 /* Views */,
 				431EB4BF2B16F982009F4203 /* Assets.xcassets */,
 				431EB4C12B16F982009F4203 /* Preview Content */,
 			);
@@ -128,6 +134,33 @@
 				431EB4D82B16F982009F4203 /* DiabetesTrackerUITestsLaunchTests.swift */,
 			);
 			path = DiabetesTrackerUITests;
+			sourceTree = "<group>";
+		};
+		431EB4E52B16FC25009F4203 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				431EB4BD2B16F980009F4203 /* Item.swift */,
+				431EB4E72B16FCD5009F4203 /* GlucoseReading.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		431EB4E62B16FC41009F4203 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				431EB4E92B1AE040009F4203 /* Glucose */,
+				431EB4BB2B16F980009F4203 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		431EB4E92B1AE040009F4203 /* Glucose */ = {
+			isa = PBXGroup;
+			children = (
+				431EB4EA2B1AE050009F4203 /* GlucoseListView.swift */,
+				431EB4EE2B1AF926009F4203 /* AddGlucoseView.swift */,
+			);
+			path = Glucose;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +293,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431EB4EB2B1AE050009F4203 /* GlucoseListView.swift in Sources */,
 				431EB4BC2B16F980009F4203 /* ContentView.swift in Sources */,
 				431EB4BE2B16F980009F4203 /* Item.swift in Sources */,
 				431EB4BA2B16F980009F4203 /* DiabetesTrackerApp.swift in Sources */,
+				431EB4E82B16FCD5009F4203 /* GlucoseReading.swift in Sources */,
+				431EB4EF2B1AF926009F4203 /* AddGlucoseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
