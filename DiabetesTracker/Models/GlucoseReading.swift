@@ -13,9 +13,9 @@ final class GlucoseReading {
     var id: UUID
     var glucose: Int
     var date: Date
-    var notes: String
+    var notes: String?
     
-    init(glucose: Int, date: Date, notes: String) {
+    init(glucose: Int, date: Date, notes: String?) {
         self.id = UUID()
         self.glucose = glucose
         self.date = date

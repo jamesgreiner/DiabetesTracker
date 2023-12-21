@@ -26,7 +26,7 @@ struct DiabetesTrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            GlucoseListView()
+            HomeView()
         }
         .modelContainer(sharedModelContainer)
     }

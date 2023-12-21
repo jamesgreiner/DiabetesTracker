@@ -15,34 +15,38 @@ struct GlucoseListView: View {
     @State private var showingAddGlucoseView = false
     
     var body: some View {
-        NavigationStack {
-            List(glucoseReadings) { reading in
-                // Create separate view
-                HStack() {
-                    Text("\(reading.glucose)")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                    Spacer()
-                    VStack(alignment: .leading) {
-                        Text(reading.date.formatDateAsString())
-                        Text(reading.date.formatTimeAsString())
-                            .foregroundStyle(.secondary)
+        GeometryReader { geometry in
+            NavigationStack {
+                List(glucoseReadings) { reading in
+                    // Create separate view
+                    HStack() {
+                        Text("\(reading.glucose)")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            
+                        Spacer()
+                        VStack(alignment: .leading) {
+                            Text(reading.date.formatDateAsString())
+                            Text(reading.date.formatTimeAsString())
+                                .foregroundStyle(.secondary)
+                        }
                     }
                 }
-            }
-            .navigationTitle("Glucose")
-            .sheet(isPresented: $showingAddGlucoseView) {
-                AddGlucoseView()
-            }
-            .toolbar {
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    EditButton()
-//                }
-                ToolbarItem {
-                    Button(action: enterGlucoseReading) {
-                        Label("Add Glucose", systemImage: "plus.circle.fill")
+                .navigationTitle("Glucose")
+                .navigationBarTitleDisplayMode(.inline)
+                .sheet(isPresented: $showingAddGlucoseView) {
+                    AddGlucoseView()
+                }
+                .toolbar {
+    //                ToolbarItem(placement: .navigationBarTrailing) {
+    //                    EditButton()
+    //                }
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button(action: enterGlucoseReading) {
+                            Label("Add Glucose", systemImage: "plus.circle.fill")
+                        }
+                        
                     }
-                    
                 }
             }
         }
