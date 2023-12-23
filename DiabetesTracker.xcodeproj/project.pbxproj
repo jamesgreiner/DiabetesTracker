@@ -21,6 +21,10 @@
 		431EB4F12B26A075009F4203 /* GlucoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431EB4F02B26A075009F4203 /* GlucoseView.swift */; };
 		431EB4F32B26AD4B009F4203 /* GlucoseChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431EB4F22B26AD4B009F4203 /* GlucoseChartView.swift */; };
 		43FDFC3B2B33DAE2001F2FEC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FDFC3A2B33DAE2001F2FEC /* HomeView.swift */; };
+		43FDFC412B33DDA5001F2FEC /* CarbsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FDFC402B33DDA5001F2FEC /* CarbsView.swift */; };
+		43FDFC432B33DDEF001F2FEC /* MedicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FDFC422B33DDEF001F2FEC /* MedicationsView.swift */; };
+		43FDFC452B33DE11001F2FEC /* RemindersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FDFC442B33DE11001F2FEC /* RemindersView.swift */; };
+		43FDFC472B33DE1E001F2FEC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FDFC462B33DE1E001F2FEC /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,10 @@
 		431EB4F02B26A075009F4203 /* GlucoseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseView.swift; sourceTree = "<group>"; };
 		431EB4F22B26AD4B009F4203 /* GlucoseChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseChartView.swift; sourceTree = "<group>"; };
 		43FDFC3A2B33DAE2001F2FEC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		43FDFC402B33DDA5001F2FEC /* CarbsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbsView.swift; sourceTree = "<group>"; };
+		43FDFC422B33DDEF001F2FEC /* MedicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationsView.swift; sourceTree = "<group>"; };
+		43FDFC442B33DE11001F2FEC /* RemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersView.swift; sourceTree = "<group>"; };
+		43FDFC462B33DE1E001F2FEC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +164,10 @@
 			children = (
 				43FDFC392B33DAD0001F2FEC /* App */,
 				431EB4E92B1AE040009F4203 /* Glucose */,
-				431EB4BB2B16F980009F4203 /* ContentView.swift */,
+				43FDFC3C2B33DC82001F2FEC /* Carbs */,
+				43FDFC3D2B33DCCF001F2FEC /* Medications */,
+				43FDFC3E2B33DD17001F2FEC /* Reminders */,
+				43FDFC3F2B33DD30001F2FEC /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,9 +175,9 @@
 		431EB4E92B1AE040009F4203 /* Glucose */ = {
 			isa = PBXGroup;
 			children = (
+				431EB4F02B26A075009F4203 /* GlucoseView.swift */,
 				431EB4EA2B1AE050009F4203 /* GlucoseListView.swift */,
 				431EB4EE2B1AF926009F4203 /* AddGlucoseView.swift */,
-				431EB4F02B26A075009F4203 /* GlucoseView.swift */,
 				431EB4F22B26AD4B009F4203 /* GlucoseChartView.swift */,
 			);
 			path = Glucose;
@@ -176,8 +187,41 @@
 			isa = PBXGroup;
 			children = (
 				43FDFC3A2B33DAE2001F2FEC /* HomeView.swift */,
+				431EB4BB2B16F980009F4203 /* ContentView.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		43FDFC3C2B33DC82001F2FEC /* Carbs */ = {
+			isa = PBXGroup;
+			children = (
+				43FDFC402B33DDA5001F2FEC /* CarbsView.swift */,
+			);
+			path = Carbs;
+			sourceTree = "<group>";
+		};
+		43FDFC3D2B33DCCF001F2FEC /* Medications */ = {
+			isa = PBXGroup;
+			children = (
+				43FDFC422B33DDEF001F2FEC /* MedicationsView.swift */,
+			);
+			path = Medications;
+			sourceTree = "<group>";
+		};
+		43FDFC3E2B33DD17001F2FEC /* Reminders */ = {
+			isa = PBXGroup;
+			children = (
+				43FDFC442B33DE11001F2FEC /* RemindersView.swift */,
+			);
+			path = Reminders;
+			sourceTree = "<group>";
+		};
+		43FDFC3F2B33DD30001F2FEC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				43FDFC462B33DE1E001F2FEC /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,8 +354,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43FDFC412B33DDA5001F2FEC /* CarbsView.swift in Sources */,
 				43FDFC3B2B33DAE2001F2FEC /* HomeView.swift in Sources */,
+				43FDFC452B33DE11001F2FEC /* RemindersView.swift in Sources */,
 				431EB4F32B26AD4B009F4203 /* GlucoseChartView.swift in Sources */,
+				43FDFC432B33DDEF001F2FEC /* MedicationsView.swift in Sources */,
 				431EB4EB2B1AE050009F4203 /* GlucoseListView.swift in Sources */,
 				431EB4BC2B16F980009F4203 /* ContentView.swift in Sources */,
 				431EB4BE2B16F980009F4203 /* Item.swift in Sources */,
@@ -319,6 +366,7 @@
 				431EB4E82B16FCD5009F4203 /* GlucoseReading.swift in Sources */,
 				431EB4EF2B1AF926009F4203 /* AddGlucoseView.swift in Sources */,
 				431EB4F12B26A075009F4203 /* GlucoseView.swift in Sources */,
+				43FDFC472B33DE1E001F2FEC /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
