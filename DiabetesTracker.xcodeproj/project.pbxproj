@@ -25,6 +25,8 @@
 		43FDFC432B33DDEF001F2FEC /* MedicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FDFC422B33DDEF001F2FEC /* MedicationsView.swift */; };
 		43FDFC452B33DE11001F2FEC /* RemindersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FDFC442B33DE11001F2FEC /* RemindersView.swift */; };
 		43FDFC472B33DE1E001F2FEC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FDFC462B33DE1E001F2FEC /* SettingsView.swift */; };
+		43FDFC4A2B343407001F2FEC /* TabHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FDFC492B343407001F2FEC /* TabHeaderView.swift */; };
+		43FDFC4D2B356844001F2FEC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FDFC4C2B356844001F2FEC /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		43FDFC422B33DDEF001F2FEC /* MedicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationsView.swift; sourceTree = "<group>"; };
 		43FDFC442B33DE11001F2FEC /* RemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersView.swift; sourceTree = "<group>"; };
 		43FDFC462B33DE1E001F2FEC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		43FDFC492B343407001F2FEC /* TabHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabHeaderView.swift; sourceTree = "<group>"; };
+		43FDFC4C2B356844001F2FEC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 		431EB4B82B16F980009F4203 /* DiabetesTracker */ = {
 			isa = PBXGroup;
 			children = (
+				43FDFC4B2B356837001F2FEC /* Extension */,
 				431EB4B92B16F980009F4203 /* DiabetesTrackerApp.swift */,
 				431EB4E52B16FC25009F4203 /* Models */,
 				431EB4E62B16FC41009F4203 /* Views */,
@@ -162,6 +167,7 @@
 		431EB4E62B16FC41009F4203 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				43FDFC482B3433F2001F2FEC /* Core */,
 				43FDFC392B33DAD0001F2FEC /* App */,
 				431EB4E92B1AE040009F4203 /* Glucose */,
 				43FDFC3C2B33DC82001F2FEC /* Carbs */,
@@ -222,6 +228,22 @@
 				43FDFC462B33DE1E001F2FEC /* SettingsView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		43FDFC482B3433F2001F2FEC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				43FDFC492B343407001F2FEC /* TabHeaderView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		43FDFC4B2B356837001F2FEC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				43FDFC4C2B356844001F2FEC /* Color.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,11 +384,13 @@
 				431EB4EB2B1AE050009F4203 /* GlucoseListView.swift in Sources */,
 				431EB4BC2B16F980009F4203 /* ContentView.swift in Sources */,
 				431EB4BE2B16F980009F4203 /* Item.swift in Sources */,
+				43FDFC4D2B356844001F2FEC /* Color.swift in Sources */,
 				431EB4BA2B16F980009F4203 /* DiabetesTrackerApp.swift in Sources */,
 				431EB4E82B16FCD5009F4203 /* GlucoseReading.swift in Sources */,
 				431EB4EF2B1AF926009F4203 /* AddGlucoseView.swift in Sources */,
 				431EB4F12B26A075009F4203 /* GlucoseView.swift in Sources */,
 				43FDFC472B33DE1E001F2FEC /* SettingsView.swift in Sources */,
+				43FDFC4A2B343407001F2FEC /* TabHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
