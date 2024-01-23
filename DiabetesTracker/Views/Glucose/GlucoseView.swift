@@ -13,37 +13,75 @@ struct GlucoseView: View {
     
     @Query private var glucoseReadings: [GlucoseReading]
     
-    @State private var displaySelection = "List"
+    @State private var chartType: GlucoseChartType = .trend
+    @State private var showingAddGlucoseView = false
 
-    private let displayOptions = ["List", "Chart"]
+    private let chartOptions: [GlucoseChartType] = [.trend, .range]
     
     var body: some View {
         VStack {
-            displaySelector
+            TabHeaderView(title: "Glucose")
+            chartPicker
             
-            Spacer()
+            if chartType == .trend {
+                GlucoseTrendView()
+            }
+            else if chartType == .range {
+                GlucoseRangeView()
+            }
+                
+//            NavigationLink {
+//                GlucoseListView()
+//            } label: {
+//                Text("Show Glucose Data")
+//            }
             
-            if displaySelection == "List" {
-                GlucoseListView()
-            }
-            else if displaySelection == "Chart" {
-                GlucoseChartView()
-            }
+            addGlucoseButton
         }
         .onAppear(perform: populateGlucoseData)
+        .sheet(isPresented: $showingAddGlucoseView) {
+            AddGlucoseView()
+        }
     }
 }
 
 extension GlucoseView {
     // MARK: View Components
-    private var displaySelector: some View {
-        Picker("", selection: $displaySelection) {
-            ForEach(displayOptions, id: \.self) {
-                Text($0)
+    private var chartPicker: some View {
+        Picker("Chart Types", selection: $chartType) {
+            ForEach(chartOptions, id: \.self) { option in
+                Text(option.description)
             }
         }
         .pickerStyle(.segmented)
         .padding()
+    }
+    
+//    private var glucoseData: some View {
+//        ScrollView(.vertical) {
+//            if chartType == .trend {
+//                GlucoseTrendView()
+//            }
+//            else if chartType == .range {
+//                GlucoseRangeView()
+//            }
+//            
+//            GlucoseListView()
+//        }
+//    }
+    
+    private var addGlucoseButton: some View {
+        Button {
+            addGlucose()
+        } label: {
+            Text("Add Glucose")
+                .frame(maxWidth: .infinity)
+                .font(.title3)
+                .fontWeight(.semibold)
+        }
+        .buttonStyle(.borderedProminent)
+        .padding()
+        .clipShape(.buttonBorder)
     }
     
     // MARK: Functions
@@ -58,7 +96,7 @@ extension GlucoseView {
     private func populateGlucoseData() {
         if glucoseReadings.count < 50 {
             for _ in 0..<50 {
-                let glucoseValue = Int.random(in: 80...150)
+                let glucoseValue = Int.random(in: 60...200)
                 let randomDateValue = randomDate()
                 let newReading = GlucoseReading(glucose: glucoseValue, date: randomDateValue, notes: nil)
                 
@@ -72,14 +110,17 @@ extension GlucoseView {
             
             // CREATE
             for _ in 0..<50 {
-                let glucoseValue = Int.random(in: 80...150)
+                let glucoseValue = Int.random(in: 60...200)
                 let randomDateValue = randomDate()
                 let newReading = GlucoseReading(glucose: glucoseValue, date: randomDateValue, notes: nil)
                 
                 modelContext.insert(newReading)
             }
         }
-        
+    }
+    
+    private func addGlucose() {
+        showingAddGlucoseView.toggle()
     }
 }
 
