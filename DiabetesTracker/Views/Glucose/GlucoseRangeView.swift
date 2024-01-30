@@ -10,12 +10,7 @@ import SwiftData
 import SwiftUI
 
 struct GlucoseRangeView: View {
-    @Query(sort: [SortDescriptor(\GlucoseReading.date)]) private var glucoseReadings: [GlucoseReading]
-    
-    @State private var lowSelected: Bool = false
-    @State private var inRangeSelected: Bool = false
-    @State private var highSelected: Bool = false
-
+    @Query private var glucoseReadings: [GlucoseReading]
     
     private let lowThreshold: Int = 80
     private let highThreshold: Int = 180
@@ -29,19 +24,18 @@ struct GlucoseRangeView: View {
                     .padding(.horizontal, geometry.size.width * 0.15)
             }
         }
-        
     }
 }
 
 extension GlucoseRangeView {
-    // MARK: View Components
+    // MARK: Views
     private var rangeChart: some View {
         Chart {
             // In Range Sector
             SectorMark(
                 angle: .value("In Range", getNormalCount()),
                 innerRadius: 0,
-                angularInset: (lowSelected || highSelected) ? 3 : 1
+                angularInset: 1
             )
                 .foregroundStyle(Color.theme.green)
             
@@ -49,7 +43,7 @@ extension GlucoseRangeView {
             SectorMark(
                 angle: .value("Low", getLowCount()),
                 innerRadius: 0,
-                angularInset: (inRangeSelected || highSelected) ? 3 : 1
+                angularInset: 1
             )
                 .foregroundStyle(Color.theme.red)
             
@@ -57,7 +51,7 @@ extension GlucoseRangeView {
             SectorMark(
                 angle: .value("High", getHighCount()),
                 innerRadius: 0,
-                angularInset: (lowSelected || inRangeSelected) ? 3 : 1
+                angularInset: 1
             )
                 .foregroundStyle(Color.theme.yellow)
         }
@@ -72,10 +66,8 @@ extension GlucoseRangeView {
                     Rectangle()
                         .frame(width: 25, height: 25)
                         .foregroundStyle(Color.theme.red)
-                    Button("Low") {
-                        lowSelected.toggle()
-                    }
-                    .frame(height: 25)
+                    Text("Low")
+                        .frame(height: 25)
                     Spacer()
                     Text(formatAsPercent(getLowCount(), glucoseReadings.count))
                         .padding(.trailing)
@@ -84,10 +76,8 @@ extension GlucoseRangeView {
                     Rectangle()
                         .frame(width: 25, height: 25)
                         .foregroundStyle(Color.theme.green)
-                    Button("In Range") {
-                        inRangeSelected.toggle()
-                    }
-                    .frame(height: 25)
+                    Text("In Range")
+                        .frame(height: 25)
                     Spacer()
                     Text(formatAsPercent(getNormalCount(), glucoseReadings.count))
                         .padding(.trailing)
@@ -96,10 +86,8 @@ extension GlucoseRangeView {
                     Rectangle()
                         .frame(width: 25, height: 25)
                         .foregroundStyle(Color.theme.yellow)
-                    Button("High") {
-                        highSelected.toggle()
-                    }
-                    .frame(height: 25)
+                    Text("High")
+                        .frame(height: 25)
                     Spacer()
                     Text(formatAsPercent(getHighCount(), glucoseReadings.count))
                         .padding(.trailing)
