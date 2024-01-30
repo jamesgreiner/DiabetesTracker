@@ -19,34 +19,34 @@ struct GlucoseView: View {
     private let chartOptions: [GlucoseChartType] = [.trend, .range]
     
     var body: some View {
-        VStack {
-            TabHeaderView(title: "Glucose")
-            chartPicker
-            
-            if chartType == .trend {
-                GlucoseTrendView()
+        NavigationStack {
+            VStack {
+                header
+                chartPicker
+                chart
+                addGlucoseButton
             }
-            else if chartType == .range {
-                GlucoseRangeView()
+            .onAppear(perform: populateGlucoseData)
+            .sheet(isPresented: $showingAddGlucoseView) {
+                AddGlucoseView()
             }
-                
-//            NavigationLink {
-//                GlucoseListView()
-//            } label: {
-//                Text("Show Glucose Data")
-//            }
-            
-            addGlucoseButton
-        }
-        .onAppear(perform: populateGlucoseData)
-        .sheet(isPresented: $showingAddGlucoseView) {
-            AddGlucoseView()
         }
     }
 }
 
 extension GlucoseView {
-    // MARK: View Components
+    // MARK: Views
+    private var header: some View {
+        ZStack {
+            TabHeaderView(title: "Glucose")
+            HStack {
+                Spacer()
+                NavigationLink("View Logs", destination: GlucoseListView())
+                    .padding(.trailing)
+            }
+        }
+    }
+    
     private var chartPicker: some View {
         Picker("Chart Types", selection: $chartType) {
             ForEach(chartOptions, id: \.self) { option in
@@ -57,18 +57,15 @@ extension GlucoseView {
         .padding()
     }
     
-//    private var glucoseData: some View {
-//        ScrollView(.vertical) {
-//            if chartType == .trend {
-//                GlucoseTrendView()
-//            }
-//            else if chartType == .range {
-//                GlucoseRangeView()
-//            }
-//            
-//            GlucoseListView()
-//        }
-//    }
+    @ViewBuilder
+    private var chart: some View {
+        if chartType == .trend {
+            GlucoseTrendView()
+        }
+        else if chartType == .range {
+            GlucoseRangeView()
+        }
+    }
     
     private var addGlucoseButton: some View {
         Button {
