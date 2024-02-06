@@ -23,6 +23,7 @@
 		432634972B58BD82008D71D3 /* GlucoseRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432634962B58BD82008D71D3 /* GlucoseRangeView.swift */; };
 		4326349A2B58C291008D71D3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432634992B58C291008D71D3 /* Constants.swift */; };
 		4326349E2B58C61A008D71D3 /* GlucoseChartType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4326349D2B58C61A008D71D3 /* GlucoseChartType.swift */; };
+		432634A02B68A6A8008D71D3 /* GlucoseListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4326349F2B68A6A8008D71D3 /* GlucoseListRowView.swift */; };
 		43FDFC3B2B33DAE2001F2FEC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FDFC3A2B33DAE2001F2FEC /* HomeView.swift */; };
 		43FDFC412B33DDA5001F2FEC /* CarbsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FDFC402B33DDA5001F2FEC /* CarbsView.swift */; };
 		43FDFC432B33DDEF001F2FEC /* MedicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FDFC422B33DDEF001F2FEC /* MedicationsView.swift */; };
@@ -69,6 +70,7 @@
 		432634962B58BD82008D71D3 /* GlucoseRangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseRangeView.swift; sourceTree = "<group>"; };
 		432634992B58C291008D71D3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4326349D2B58C61A008D71D3 /* GlucoseChartType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseChartType.swift; sourceTree = "<group>"; };
+		4326349F2B68A6A8008D71D3 /* GlucoseListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseListRowView.swift; sourceTree = "<group>"; };
 		43FDFC3A2B33DAE2001F2FEC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		43FDFC402B33DDA5001F2FEC /* CarbsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbsView.swift; sourceTree = "<group>"; };
 		43FDFC422B33DDEF001F2FEC /* MedicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationsView.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				431EB4F02B26A075009F4203 /* GlucoseView.swift */,
 				431EB4EA2B1AE050009F4203 /* GlucoseListView.swift */,
+				4326349F2B68A6A8008D71D3 /* GlucoseListRowView.swift */,
 				431EB4EE2B1AF926009F4203 /* AddGlucoseView.swift */,
 				432634942B58BD05008D71D3 /* GlucoseTrendView.swift */,
 				432634962B58BD82008D71D3 /* GlucoseRangeView.swift */,
@@ -403,6 +406,7 @@
 			files = (
 				43FDFC412B33DDA5001F2FEC /* CarbsView.swift in Sources */,
 				4326349A2B58C291008D71D3 /* Constants.swift in Sources */,
+				432634A02B68A6A8008D71D3 /* GlucoseListRowView.swift in Sources */,
 				43FDFC3B2B33DAE2001F2FEC /* HomeView.swift in Sources */,
 				432634952B58BD05008D71D3 /* GlucoseTrendView.swift in Sources */,
 				43FDFC452B33DE11001F2FEC /* RemindersView.swift in Sources */,

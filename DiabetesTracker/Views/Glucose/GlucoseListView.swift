@@ -13,21 +13,15 @@ struct GlucoseListView: View {
     @Query private var glucoseReadings: [GlucoseReading]
         
     var body: some View {
-        List(glucoseReadings) { reading in
-            // Create separate view
-            HStack() {
-                Text("\(reading.glucose)")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    
-                Spacer()
-                VStack(alignment: .leading) {
-                    Text(reading.date.formatDateAsString())
-                    Text(reading.date.formatTimeAsString())
-                        .foregroundStyle(.secondary)
+        ScrollView {
+            LazyVStack(spacing: 10) {
+                ForEach(glucoseReadings.sorted(by: { $0.date < $1.date })) { reading in
+                    GlucoseListRowView(glucoseReading: reading)
+                        .padding(.horizontal)
                 }
             }
         }
+        .background(Color.theme.background)
     }
 }
 
